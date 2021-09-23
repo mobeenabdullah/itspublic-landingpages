@@ -52,6 +52,9 @@ class Itspublic_Landingpages_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+        require_once 'partials/itspublic-landingpages-cpts.php';
+        require_once 'partials/itspublic-landingpages-extra.php';
+
 	}
 
 	/**
