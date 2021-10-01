@@ -1,32 +1,62 @@
 (function( $ ) {
-	'use strict';
 
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
+	$( document ).ready(function() {
+
+		// Implementing Slider on City Landing Page sections
+		$('.lp-section-slider').slick({
+			dots: false,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 5,
+			prevArrow: '<button class="slide-arrow prev-arrow"><i class="fas fa-arrow-left"></i></button>',
+			nextArrow: '<button class="slide-arrow next-arrow"><i class="fas fa-arrow-right"></i></button>',
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 4
+					}
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 481,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+
+
+			]
+		});
+
+		// City Landing Page Members z-index Fix
+		const lpMembers = document.querySelectorAll(".lp-contact-person-box");
+		let lpMembersCount = lpMembers.length;
+		lpMembers.forEach(member);
+		function member(key,val){
+			lpMembers[val].style.zIndex = lpMembersCount;
+			lpMembersCount--;
+		}
+	});
+
 
 })( jQuery );
+
+
