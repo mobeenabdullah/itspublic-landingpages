@@ -1,7 +1,5 @@
 (function( $ ) {
-
 	$( document ).ready(function() {
-
 		// Implementing Slider on City Landing Page sections
 		$('.lp-section-slider').slick({
 			dots: false,
@@ -41,11 +39,8 @@
 						slidesToShow: 1
 					}
 				}
-
-
 			]
 		});
-
 		// City Landing Page Members z-index Fix
 		const lpMembers = document.querySelectorAll(".lp-contact-person-box");
 		let lpMembersCount = lpMembers.length;
@@ -55,8 +50,6 @@
 			lpMembersCount--;
 		}
 	});
-
-
 })( jQuery );
 
 

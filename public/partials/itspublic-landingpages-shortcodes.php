@@ -1,4 +1,5 @@
 <?php
+// Gemeente Landing Page Shortcode
 function show_gemeente_lp_cb(){
     ob_start(); ?>
 
@@ -624,5 +625,60 @@ function show_gemeente_lp_cb(){
     <?php $content = ob_get_clean();
     return $content;
 }
-
 add_shortcode('show_gemeente_lp', 'show_gemeente_lp_cb');
+
+// Thematic Cards Shortcode
+function show_thematic_cards_cb( $atts ){
+    ob_start();
+
+    $get_slug = $atts['slug'];
+    $cards_args = array(
+        'post_type' => 'materiaal',
+        'post_status' => 'publish',
+        'posts_per_page' => 6,
+        'tax_query' => array(
+                array(
+                    'taxonomy' => 'onderwerp',
+                    'field' => 'slug',
+                    'terms' => $get_slug,
+                )
+            )
+    );
+
+    $cards_loop = new WP_Query( $cards_args );
+    ?>
+    <section class="thematic-cards">
+    <?php
+    while ( $cards_loop->have_posts() ) : $cards_loop->the_post();
+        $thematic_photo = get_field('photo');
+        $categorie_terms = wp_get_post_terms(get_the_ID(), 'categorie', array( 'fields' => 'all' ));
+        $first_categorie = array_values($categorie_terms)[0];
+        $categorie_id = $first_categorie->term_id;
+        $categorie_name = $first_categorie->name;
+        $categorie_color = get_term_meta($categorie_id, 'categorie_color', true);
+    ?>
+        <div class="thematic-card">
+            <div class="thematic-card-wrap">
+                <a href="<?php the_permalink(); ?>" class="thematic-card-wrap-image">
+                    <?php echo get_the_post_thumbnail($thematic_photo->ID, 'full', array('class' => 'img-fluid')); ?>
+                </a>
+                <div class="thematic-card-wrap-overlay"></div>
+            </div>
+            <div class="thematic-card-link" style="background: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
+            <div class="thematic-title">
+                <h2 class="thematic-title-content">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h2>
+            </div>
+        </div>
+    <?php
+    endwhile;
+    wp_reset_postdata();
+    ?>
+    </section>
+    <?php
+     $content = ob_get_clean();
+    return $content;
+}
+add_shortcode('show_thematic_cards', 'show_thematic_cards_cb');
+
