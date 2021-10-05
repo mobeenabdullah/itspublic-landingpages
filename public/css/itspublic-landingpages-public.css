@@ -474,9 +474,6 @@ ul{
     border-radius: 10px;
 }
 .thematic-card-wrap{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -488,6 +485,16 @@ ul{
 }
 .thematic-card-wrap-image img{
     border-radius: 10px !important;
+}
+.thematic-card-wrap a {
+    display: block;
+    overflow: hidden;
+}
+.thematic-card-wrap a img {
+    transition: 0.2s all;
+}
+.thematic-card-wrap:hover a img {
+    transform: scale(1.1) rotate(-3deg);
 }
 .thematic-card-wrap-overlay{
     position: absolute;
@@ -502,18 +509,17 @@ ul{
     background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.35) 60%,rgba(34,119,123,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#22777b',GradientType=0 );
 }
-.thematic-card-link{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
 .thematic-card-link {
-    padding: 5px 15px 3px 15px;
+    padding: 7px 10px 6px 10px;
     color: #ffffff !important;
-    border-radius: 6px;
+    border-radius: 3px;
     font-size: 12px;
     font-family: 'Hind', sans-serif;
+    line-height: 1;
     font-weight: 500 !important;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 .thematic-title{
     position: absolute;
