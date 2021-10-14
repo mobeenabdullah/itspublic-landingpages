@@ -462,6 +462,10 @@ ul{
     }
 }
 /*Thematic Styling*/
+.elementor-text-editor p a {
+    font-weight: 600;
+    text-decoration: underline;
+}
 .thematic-cards{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -491,10 +495,11 @@ ul{
     overflow: hidden;
 }
 .thematic-card-wrap a img {
-    transition: 0.2s all;
+    transition: all 0.3s ease-in;
+    filter: grayscale(1);
 }
 .thematic-card-wrap:hover a img {
-    transform: scale(1.1) rotate(-3deg);
+    filter: grayscale(0);
 }
 .thematic-card-wrap-overlay{
     position: absolute;
