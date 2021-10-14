@@ -462,7 +462,7 @@ ul{
     }
 }
 /*Thematic Styling*/
-.elementor-text-editor p a {
+.elementor-text-editor p a, .elementor-text-editor ul li a {
     font-weight: 600;
     text-decoration: underline;
 }
