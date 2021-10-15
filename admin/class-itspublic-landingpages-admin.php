@@ -54,6 +54,7 @@ class Itspublic_Landingpages_Admin {
 
         require_once 'partials/itspublic-landingpages-cpts.php';
         require_once 'partials/itspublic-landingpages-extra.php';
+        require_once 'partials/itspublic-landingpages-docs-uplaod.php';
 
 	}
 
@@ -100,6 +101,7 @@ class Itspublic_Landingpages_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-landingpages-admin.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( $this->plugin_name, 'ip_ajax_obj',  array( 'ajaxUrl' => admin_url( 'admin-ajax.php' ) ));
 
 	}
 
