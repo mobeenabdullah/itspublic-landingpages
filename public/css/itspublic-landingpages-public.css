@@ -520,9 +520,10 @@ ul{
 }
 .thematic-title{
     position: absolute;
-    bottom: 24px;
-    left: 20px;
+    bottom: 15px;
+    left: 50%;
     width: 90%;
+    transform: translateX(-50%);
 }
 .thematic-title-content{
     margin: 0 !important;
@@ -531,10 +532,11 @@ ul{
 }
 .thematic-title .thematic-title-content a{
     font-family: 'Hind', sans-serif;
-    font-size: 16px !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     color: #ffffff !important;
+    line-height: 16px;
     display: block;
-    padding: 5px 10px;
-    border-radius: 8px;
+    padding: 6px 10px;
+    border-radius: 3px;
 }
