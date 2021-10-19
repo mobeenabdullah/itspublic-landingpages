@@ -662,12 +662,10 @@ function show_thematic_cards_cb( $atts ){
                 <a href="<?php the_permalink(); ?>" class="thematic-card-wrap-image">
                     <?php echo get_the_post_thumbnail($thematic_photo->ID, 'full', array('class' => 'img-fluid')); ?>
                 </a>
-                <div class="thematic-card-wrap-overlay"></div>
             </div>
-            <div class="thematic-card-link" style="background: <?php echo $categorie_color; ?> !important;"><?php echo $categorie_name; ?></div>
             <div class="thematic-title">
-                <h2 class="thematic-title-content">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <h2 class="thematic-title-content" >
+                    <a href="<?php the_permalink(); ?>" style="background: <?php echo $categorie_color; ?> !important;"><?php the_title(); ?></a>
                 </h2>
             </div>
         </div>

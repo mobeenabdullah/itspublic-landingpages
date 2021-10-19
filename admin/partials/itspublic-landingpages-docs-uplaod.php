@@ -26,7 +26,6 @@ class UploadDocs {
 			'dashicons-cloud-upload'
 		);
 	}
-
 	/**
 	 * Options page callback
 	 */
