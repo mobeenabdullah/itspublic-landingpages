@@ -467,6 +467,7 @@ ul{
     color: #000000;
 }
 .elementor-text-editor p a:hover, .elementor-text-editor ul li a:hover {
+    text-decoration: underline;
     color: #000000;
 }
 .thematic-cards{
@@ -539,4 +540,9 @@ ul{
     display: block;
     padding: 6px 10px;
     border-radius: 3px;
+}
+.thematic-title .thematic-title-content a span {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 7px;
 }

@@ -665,7 +665,7 @@ function show_thematic_cards_cb( $atts ){
             </div>
             <div class="thematic-title">
                 <h2 class="thematic-title-content" >
-                    <a href="<?php the_permalink(); ?>" style="background: <?php echo $categorie_color; ?> !important;"><?php the_title(); ?></a>
+                    <a href="<?php the_permalink(); ?>" style="background: <?php echo $categorie_color; ?> !important;"><span><?php echo $categorie_name; ?></span><?php the_title(); ?></a>
                 </h2>
             </div>
         </div>
