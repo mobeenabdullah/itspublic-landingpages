@@ -635,7 +635,7 @@ function show_thematic_cards_cb( $atts ){
     $cards_args = array(
         'post_type' => 'materiaal',
         'post_status' => 'publish',
-        'posts_per_page' => 6,
+        'posts_per_page' => -1,
         'tax_query' => array(
                 array(
                     'taxonomy' => 'onderwerp',
