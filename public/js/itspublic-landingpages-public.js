@@ -1,5 +1,6 @@
 (function( $ ) {
 	$( document ).ready(function() {
+
 		// Implementing Slider on City Landing Page sections
 		$('.lp-section-slider').slick({
 			dots: false,
@@ -49,6 +50,56 @@
 			lpMembers[val].style.zIndex = lpMembersCount;
 			lpMembersCount--;
 		}
+
+		// Docs Table Filter
+		var jobCount = $('.docs-list .in').length;
+		$('.docs-list-count').text(jobCount + ' items');
+
+		$("#search-text").keyup(function () {
+			//$(this).addClass('hidden');
+
+			var searchTerm = $("#search-text").val();
+			var listItem = $('.docs-list').children('li');
+
+			var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+			//extends :contains to be case insensitive
+			$.extend($.expr[':'], {
+				'containsi': function(elem, i, match, array)
+				{
+					return (elem.textContent || elem.innerText || '').toLowerCase()
+						.indexOf((match[3] || "").toLowerCase()) >= 0;
+				}
+			});
+
+
+			$(".docs-list li .doc-title").not(":containsi('" + searchSplit + "')").each(function(e)   {
+				$(this).parent().addClass('hiding out').removeClass('in');
+				setTimeout(function() {
+					$('.out').addClass('hidden');
+				}, 300);
+			});
+
+			$(".docs-list li .doc-title:containsi('" + searchSplit + "')").each(function(e) {
+				$(this).parent().removeClass('hidden out').addClass('in');
+				setTimeout(function() {
+					$('.in').removeClass('hiding');
+				}, 1);
+			});
+
+
+			var jobCount = $('.docs-list .in').length;
+			$('.docs-list-count').text(jobCount + ' items');
+
+			//shows empty state text when no jobs found
+			if(jobCount == '0') {
+				$('.docs-list').addClass('empty');
+			}
+			else {
+				$('.docs-list').removeClass('empty');
+			}
+		});
+
 	});
 })( jQuery );
 
