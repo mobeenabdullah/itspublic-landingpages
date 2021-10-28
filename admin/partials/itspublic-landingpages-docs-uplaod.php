@@ -31,127 +31,49 @@ class UploadDocs {
 	 */
 	public function upload_docs_admin_page () {
 		?>
-		<div class="wrap upload-form">
-			<h1>
-                <span class="dashicons dashicons-cloud-upload" style="margin-right: 10px; font-size: 30px;"></span>
-                Docs Uploader
-            </h1>
-            <hr>
-            <table class="form-table" role="presentation">
-                <tbody>
-                <tr>
-                    <th scope="row">Select PDF/PPT files</th>
-                    <td><input type="file" name="files[]" class="files-data form-control" multiple></td>
-                </tr>
-                </tbody>
-            </table>
-
-            <p class="submit">
-                <input type="submit" name="submit" id="submit" class="button button-primary btn-upload" value="Start Uploading">
-            </p>
+		<div class="wrap upload-form" id="mwp-dropform-wrapper">
+            <div id="mwp-dropform-uploder" class="dropzone"></div>
 		</div>
 		<?php
 	}
 
 	public function cvf_upload_files(){
 
-		$valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "pdf"); // Supported file types
-		$max_file_size = 1024 * 500; // in kb
-		$max_image_upload = 1000; // Define how many images can be uploaded to the current post
-		$wp_upload_dir = wp_upload_dir();
-		$path = $wp_upload_dir['path'] . '/';
-		$count = 0;
+		if (!empty($_FILES)) {
 
-		// Image upload handler
-		if( $_SERVER['REQUEST_METHOD'] == "POST" ){
+			foreach ($_FILES as $file => $array) {
+				if ($_FILES[$file]['error'] !== UPLOAD_ERR_OK) { // If there is some errors, during file upload
+					wp_send_json(array('status' => 'error', 'message' => __('Error: ', 'mwp-dropform') . $_FILES[$file]['error']));
+				}
 
-			// Check if user is trying to upload more than the allowed number of images for the current post
-			if( ( count( $_FILES['files']['name'] ) ) > $max_image_upload ) {
-				$upload_message[] = "Sorry you can only upload " . $max_image_upload . " images for each Ad";
-			} else {
+				// HANDLE RECEIVED FILE
+				$create_doc = wp_insert_post(array(
+					'post_title' => $array['name'],
+					'post_status'  => 'publish',
+					'post_type' => 'doc'
+				));
 
-				foreach ( $_FILES['files']['name'] as $f => $name ) {
-					$extension = pathinfo( $name, PATHINFO_EXTENSION );
-					// Generate a randon code for each file name
-					//$new_filename = $this->cvf_td_generate_random_code( 20 )  . '.' . $extension;
-					$new_filename = $this->generate_document_name( $name );
+				$post_id = $create_doc; // Set post ID to attach uploaded image to specific post
 
-					if ( $_FILES['files']['error'][$f] == 4 ) {
-						continue;
-					}
+				$attachment_id = media_handle_upload($file, $post_id);
 
-					if ( $_FILES['files']['error'][$f] == 0 ) {
-						// Check if image size is larger than the allowed file size
-						if ( $_FILES['files']['size'][$f] > $max_file_size ) {
-							$upload_message[] = "$name is too large!.";
-							continue;
+                update_field('ip_doc', $attachment_id, $post_id);
 
-							// Check if the file being uploaded is in the allowed file types
-						} elseif( ! in_array( strtolower( $extension ), $valid_formats ) ){
-							$upload_message[] = "$name is not a valid format";
-							continue;
-
-						} else{
-							// If no errors, upload the file...
-
-                            $create_doc = wp_insert_post(array(
-                                'post_title' => $new_filename,
-                                'post_status'  => 'publish',
-                                'post_type' => 'doc'
-                            ));
-
-							if( move_uploaded_file( $_FILES["files"]["tmp_name"][$f], $path.$new_filename ) ) {
-
-								$count++;
-
-								$filename = $path.$new_filename;
-								$filetype = wp_check_filetype( basename( $filename ), null );
-								$wp_upload_dir = wp_upload_dir();
-								$attachment = array(
-									'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
-									'post_mime_type' => $filetype['type'],
-									'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
-									'post_content'   => '',
-									'post_status'    => 'inherit'
-								);
-								// Insert attachment to the database
-								$attach_id = wp_insert_attachment( $attachment, $filename, $create_doc );
-
-								require_once( ABSPATH . 'wp-admin/includes/image.php' );
-
-								// Generate meta data
-								$attach_data = wp_generate_attachment_metadata( $attach_id, $filename );
-								wp_update_attachment_metadata( $attach_id, $attach_data );
-
-							}
-						}
-					}
+				if (is_wp_error($attachment_id)) { // Check for errors during attachment creation
+					wp_send_json(array(
+						'status' => 'error',
+						'message' => __('Error while processing file', 'mwp-dropform'),
+					));
+				} else {
+					wp_send_json(array(
+						'status' => 'ok',
+						'attachment_id' => $attachment_id,
+						'message' => __('File uploaded', 'mwp-dropform'),
+					));
 				}
 			}
 		}
-		// Loop through each error then output it to the screen
-		if ( isset( $upload_message ) ) :
-			foreach ( $upload_message as $msg ){
-				printf( __('<p class="bg-danger">%s</p>', 'wp-trade'), $msg );
-			}
-		endif;
-
-		// If no error, show success message
-		if( $count != 0 ){
-			printf( __('<p class = "bg-success">%d files added successfully!</p>', 'wp-trade'), $count );
-		}
-
-		exit();
-	}
-
-    // Random code generator used for file names.
-	public function generate_document_name($name) {
-
-        $timestamp = time();
-
-		//return $string;
-		return $timestamp . '-' . $name;
-
+		wp_send_json(array('status' => 'error', 'message' => __('There is nothing to upload!', 'mwp-dropform')));
 	}
 }
 

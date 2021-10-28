@@ -546,3 +546,96 @@ ul{
     font-weight: normal;
     margin-bottom: 7px;
 }
+
+/* Container Landing Page Template */
+.docs-list-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #21777b;
+    padding: 15px 20px;
+    margin-top: 50px;
+}
+.docs-search #search-text {
+    font-size: 14px;
+    border: none;
+    width: 300px;
+}
+.docs-results-found h5 {
+    margin: 0;
+    color: #fff !important;
+}
+.docs-results-found h5 .docs-list-count {
+    padding: 7px 10px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    background: #333;
+    border-radius: 3px;
+}
+.docs-list-header {
+    display: grid;
+    grid-template-columns: 7% 7% 45% 8% 12% 15%;
+    grid-gap: 10px;
+    background-color: #EEE;
+    padding: 5px 10px 0 10px;
+    font-size: 14px;
+    color: #000;
+}
+.docs-list-header .doc-id-head, .doc-item .doc-id {
+    display: inline-block;
+    width: 70px;
+}
+.docs-list {
+    max-height: 400px;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 50px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+}
+.docs-list li {
+    padding: 5px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+.docs-list .doc-item {
+    display: grid;
+    grid-template-columns: 7% 7% 46% 8% 12% 15%;
+    grid-gap: 10px;
+    color: #333;
+}
+.docs-list .doc-item .doc-type img {
+    height: 25px;
+    width: auto;
+}
+.docs-list .doc-item .doc-actions a {
+    border: 1px solid #999;
+    font-size: 12px;
+    display: inline-block;
+    padding: 7px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 3px;
+    color: #666;
+    font-weight: normal;
+    transition-duration: 0.3s;
+}
+.docs-list .doc-item .doc-actions a:hover {
+    background-color: #333;
+    border-color: #333;
+    color: #FFF;
+}
+.docs-list .doc-item .doc-title a {
+    color: #333;
+}
+.docs-list .doc-item .doc-title a:hover {
+    color: #22777b;
+    text-decoration: underline;
+}
+.docs-list .doc-item.hidden {
+    display: none;
+}
+.docs-list .doc-item span {
+    display: flex;
+    align-items: center;
+}
