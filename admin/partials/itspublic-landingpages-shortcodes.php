@@ -1,12 +1,27 @@
 <?php
 
 // IP Docs Shortcode
-function ip_show_docs( ) {
+function ip_show_docs( $atts ) {
 	ob_start();
+    $get_slug = '';
+    $get_slug = $atts['slug'];
+    if($get_slug){
+        $arg_tax = array(
+            array(
+                'taxonomy' => 'doccategory',
+                'field' => 'slug',
+                'terms' => $get_slug,
+            )
+        );
+    }else {
+        $arg_tax = '';
+    }
+
 	$args = array(
 		'posts_per_page' => -1,
 		'post_type' => 'doc',
 		'post_status' => 'publish',
+        'tax_query' => $arg_tax
 	);
 	$my_query = new WP_Query($args);
 
@@ -36,14 +51,16 @@ function ip_show_docs( ) {
                 <?php $get_doc = get_field('ip_doc', get_the_ID()); ?>
 
                 <?php if ($get_doc) : ?>
-
                     <li class="doc-item in">
                         <span class="doc-id">
                             <?php echo $get_doc['ID']; ?>
                         </span>
                         <span class="doc-type">
+
                             <?php
                                 if($get_doc['subtype'] === 'vnd.ms-powerpoint') {
+                                    $file_icon_url = 'https://img.icons8.com/color/50/000000/ms-powerpoint--v1.png';
+                                } elseif($get_doc['subtype'] === 'vnd.openxmlformats-officedocument.presentationml.presentation') {
                                     $file_icon_url = 'https://img.icons8.com/color/50/000000/ms-powerpoint--v1.png';
                                 } elseif($get_doc['subtype'] === 'pdf') {
                                     $file_icon_url = 'https://img.icons8.com/color/48/000000/adobe-acrobat--v1.png';

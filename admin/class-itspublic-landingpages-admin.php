@@ -56,7 +56,7 @@ class Itspublic_Landingpages_Admin {
         require_once 'partials/itspublic-landingpages-extra.php';
         require_once 'partials/itspublic-landingpages-docs-uplaod.php';
         require_once 'partials/itspublic-landingpages-shortcodes.php';
-
+        require_once 'partials/itspublic-landingpages-taxonomy.php';
 	}
 
 	/**

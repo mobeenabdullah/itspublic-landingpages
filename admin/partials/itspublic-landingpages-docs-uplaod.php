@@ -30,7 +30,22 @@ class UploadDocs {
 	 * Options page callback
 	 */
 	public function upload_docs_admin_page () {
-		?>
+
+        $doc_terms = get_terms( array(
+            'taxonomy' => 'doccategory',
+            'hide_empty' => false,
+        ) );
+        ?>
+        <div class="doc-taxonomy-form">
+            <?php
+                foreach($doc_terms as $doc_term){
+                    ?>
+                    <div class="doc-taxonomy-form-input-group">
+                        <input type="checkbox" id="<?php echo $doc_term->slug; ?>" value="<?php echo $doc_term->term_id; ?>">
+                        <label for="<?php echo $doc_term->slug; ?>"><?php echo $doc_term->name; ?></label>
+                    </div>
+                <?php } ?>
+        </div>
 		<div class="wrap upload-form" id="mwp-dropform-wrapper">
             <div id="mwp-dropform-uploder" class="dropzone"></div>
 		</div>

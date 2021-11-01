@@ -11,7 +11,7 @@
 				'mwp-dropform-nonce': $('#mwp-dropform-nonce').val()
 			},
 			paramName: "mwp-dropform-file", // name of file field
-			acceptedFiles: 'application/pdf,.ppt', // accepted file types
+			acceptedFiles: 'application/pdf,.ppt,.pptx', // accepted file types
 			maxFilesize: 20, // MB
 			addRemoveLinks: false,
 
