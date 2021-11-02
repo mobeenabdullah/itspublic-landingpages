@@ -2,3 +2,10 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+.doc-taxonomy-form-input-group {
+    display: inline-block;
+    margin-right: 15px;
+}
+.reset-cover {
+    display: inline-block;
+}

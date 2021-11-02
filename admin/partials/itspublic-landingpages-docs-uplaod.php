@@ -37,16 +37,20 @@ class UploadDocs {
         ) );
         ?>
         <div class="doc-taxonomy-form">
+            <h4>Select Category:</h4>
             <?php
                 foreach($doc_terms as $doc_term){
                     ?>
                     <div class="doc-taxonomy-form-input-group">
-                        <input type="checkbox" id="<?php echo $doc_term->slug; ?>" value="<?php echo $doc_term->term_id; ?>">
+                        <input type="radio" id="<?php echo $doc_term->slug; ?>" class="doc-taxonomy-form-input" name="docsCat" value="<?php echo $doc_term->term_id; ?>">
                         <label for="<?php echo $doc_term->slug; ?>"><?php echo $doc_term->name; ?></label>
                     </div>
                 <?php } ?>
+            <div class="reset-cover">
+                <a href="<?php echo esc_url( home_url( $_SERVER['REQUEST_URI'] ) ); ?>" class="reset-btn">Change Category</a>
+            </div>
         </div>
-		<div class="wrap upload-form" id="mwp-dropform-wrapper">
+		<div class="wrap upload-form" id="mwp-dropform-wrapper" >
             <div id="mwp-dropform-uploder" class="dropzone"></div>
 		</div>
 		<?php
@@ -61,11 +65,16 @@ class UploadDocs {
 					wp_send_json(array('status' => 'error', 'message' => __('Error: ', 'mwp-dropform') . $_FILES[$file]['error']));
 				}
 
+				$getDocID = $_GET['docCat'];
+
 				// HANDLE RECEIVED FILE
 				$create_doc = wp_insert_post(array(
 					'post_title' => $array['name'],
 					'post_status'  => 'publish',
-					'post_type' => 'doc'
+					'post_type' => 'doc',
+                    'tax_input'    => array(
+                            "doccategory" => $getDocID //Video Cateogry is Taxnmony Name and being used as key of array.
+                    ),
 				));
 
 				$post_id = $create_doc; // Set post ID to attach uploaded image to specific post

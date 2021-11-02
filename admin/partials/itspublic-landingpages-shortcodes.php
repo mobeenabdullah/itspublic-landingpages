@@ -4,8 +4,8 @@
 function ip_show_docs( $atts ) {
 	ob_start();
     $get_slug = '';
-    $get_slug = $atts['slug'];
-    if($get_slug){
+    if(!empty($atts)){
+        $get_slug = $atts['slug'];
         $arg_tax = array(
             array(
                 'taxonomy' => 'doccategory',
@@ -64,6 +64,10 @@ function ip_show_docs( $atts ) {
                                     $file_icon_url = 'https://img.icons8.com/color/50/000000/ms-powerpoint--v1.png';
                                 } elseif($get_doc['subtype'] === 'pdf') {
                                     $file_icon_url = 'https://img.icons8.com/color/48/000000/adobe-acrobat--v1.png';
+                                }elseif($get_doc['subtype'] === 'vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+                                    $file_icon_url = 'https://img.icons8.com/color/48/000000/ms-excel.png';
+                                }elseif($get_doc['subtype'] === 'vnd.ms-excel') {
+                                    $file_icon_url = 'https://img.icons8.com/color/48/000000/ms-excel.png';
                                 } else {
                                     $file_icon_url = 'https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/48/000000/external-file-banking-and-finance-kiranshastry-lineal-color-kiranshastry-3.png';
                                 }
