@@ -7,7 +7,7 @@ function show_gemeente_lp_cb(){
             <div class="container">
                 <div class="main-area-content">
                     <div class="main-area-title">
-                        <h1>Amsterdam</h1>
+                        <h1><?php the_title(); ?></h1>
                     </div>
                     <div class="image-information">
                         <div class="image-photographer-info">
@@ -68,112 +68,35 @@ function show_gemeente_lp_cb(){
                         <h2>On Amsterdam</h2>
                     </div>
                     <div class="lp-section-slider">
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
+                        <?php
+                              $args = array(
+                                    'post_type' => 'materiaal',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => -1,
+                                );
+                                $loop = new WP_Query( $args );
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                $photo = get_field('photo');
+                                ?>
+                                    <div>
+                                        <div class="lp-section-slider-item">
+                                            <div class="lp-section-slider-item-row">
+                                                <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                                    <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
+                                                    <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
+                                                </a>
+                                            </div>
+                                            <div class="lp-section-slider-item-detail lp-section-slider-item-row">
+                                                <?php the_excerpt(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <?php
+                            endwhile;
+                        wp_reset_postdata();
+
+                        ?>
                     </div>
-                </div>
             </div>
         </section>
         <section class="lp-section lp-comparision-materialen lp-partial-white">
@@ -183,111 +106,34 @@ function show_gemeente_lp_cb(){
                             <h2>Comparing Amsterdam</h2>
                         </div>
                         <div class="lp-section-slider">
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
+                            <?php
+                            $args = array(
+                                'post_type' => 'materiaal',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                            );
+                            $loop = new WP_Query( $args );
+                            while ( $loop->have_posts() ) : $loop->the_post();
+                                $photo = get_field('photo');
+                                ?>
+                                <div>
+                                    <div class="lp-section-slider-item">
+                                        <div class="lp-section-slider-item-row">
+                                            <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                                <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID); ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
+                                                <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
+                                            </a>
+                                        </div>
+                                        <div class="lp-section-slider-item-detail lp-section-slider-item-row">
+                                            <?php the_excerpt(); ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="lp-section-slider-item">
-                                    <div class="lp-section-slider-item-row">
-                                        <a href="" class="lp-section-item-link">
-                                            <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                            <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                        </a>
-                                    </div>
-                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                        <p>
-                                            Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                            endwhile;
+                            wp_reset_postdata();
+
+                            ?>
                         </div>
                     </div>
             </section>
@@ -298,111 +144,41 @@ function show_gemeente_lp_cb(){
                         <h2>Other general publications</h2>
                     </div>
                     <div class="lp-section-slider">
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
+                        <?php
+                        $args = array(
+                            'post_type' => 'materiaal',
+                            'post_status' => 'publish',
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'onderwerp',
+                                    'field' => 'slug',
+                                    'terms' => array('overig', 'algemeen'),
+                                )
+                            )
+                        );
+                        $loop = new WP_Query( $args );
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            $photo = get_field('photo');
+                            ?>
+                            <div>
+                                <div class="lp-section-slider-item">
+                                    <div class="lp-section-slider-item-row">
+                                        <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                            <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
+                                            <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
+                                        </a>
+                                    </div>
+                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+
+                        ?>
                     </div>
                 </div>
         </section>
@@ -413,111 +189,41 @@ function show_gemeente_lp_cb(){
                         <h2>Training and template materials</h2>
                     </div>
                     <div class="lp-section-slider">
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
+                        <?php
+                        $args = array(
+                            'post_type' => 'materiaal',
+                            'post_status' => 'publish',
+                            'posts_per_page' => -1,
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'categorie',
+                                    'field' => 'slug',
+                                    'terms' => array('templates', 'training'),
+                                )
+                            )
+                        );
+                        $loop = new WP_Query( $args );
+                        while ( $loop->have_posts() ) : $loop->the_post();
+                            $photo = get_field('photo');
+                            ?>
+                            <div>
+                                <div class="lp-section-slider-item">
+                                    <div class="lp-section-slider-item-row">
+                                        <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                            <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
+                                            <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
+                                        </a>
+                                    </div>
+                                    <div class="lp-section-slider-item-detail lp-section-slider-item-row">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="lp-section-slider-item">
-                                <div class="lp-section-slider-item-row">
-                                    <a href="" class="lp-section-item-link">
-                                        <span class="lp-section-item-image"><img src="https://c.pxhere.com/photos/6c/4e/mac_freelancer_macintosh_macbook_laptop_computer_iphone_office-1092360.jpg!d" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                        <span class="lp-section-item-link-text"><h3>Portfolio management in the public sector</h3></span>
-                                    </a>
-                                </div>
-                                <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                    <p>
-                                        Municipalities have to make far-reaching financial choices on various themes in order to compensate for shortages.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+
+                        ?>
                     </div>
                 </div>
         </section>
@@ -533,90 +239,34 @@ function show_gemeente_lp_cb(){
                         </div>
                     </div>
                     <div class="lp-contact-person">
+                    <?php
+                    $args = array(
+                        'post_type' => 'member',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 7,
+                    );
+                    $loop = new WP_Query( $args );
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                        $get_member_email = rwmb_meta( 'itspublic-member_email' );
+
+                        ?>
                         <div class="lp-contact-person-box">
                             <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
+                                <a href="<?php the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid" alt="person" loading="lazy"></a>
                             </div>
                             <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
+                                <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                                <p><?php echo $get_member_email; ?></p>
                                 <div class="triangle-cover">
                                     <div class='triangle'></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lp-contact-person-box">
-                            <div class="lp-contact-person-box-img">
-                                <img src="https://c.pxhere.com/photos/e7/39/beard_man_eye_male_hair-41385.jpg!d" class="img-fluid" alt="person" loading="lazy">
-                            </div>
-                            <div class="lp-contact-person-box-detail">
-                                <h4>Hugo den Breejen</h4>
-                                <p>hugo.denbreejen@itspublic.nl</p>
-                                <div class="triangle-cover">
-                                    <div class='triangle'></div>
-                                </div>
-                            </div>
-                        </div>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+
+                    ?>
                     </div>
                 </div>
             </div>

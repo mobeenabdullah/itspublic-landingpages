@@ -147,6 +147,9 @@ ul{
     padding: 8px 6px 17px 8px;
     height: 265px;
     margin: 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .lp-section-slider-item:hover {
     box-shadow: 0 0 5px 0px rgba(0,0,0,0.1);
@@ -176,7 +179,15 @@ ul{
     font-weight: 400 !important;
     line-height: 14px !important;
     font-family: 'Hind', sans-serif !important;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    height: 43px;
+    overflow: hidden;
+    cursor: text;
 }
+
 .lp-section-slider .slick-arrow{
     position: absolute;
     top: 50%;
@@ -252,7 +263,8 @@ ul{
     display: none;
     top: -50%;
     height: 55px;
-    width: 145px;
+    min-width: 145px;
+    width: max-content;
     padding: 8px;
     border-radius: 4px;
 }
