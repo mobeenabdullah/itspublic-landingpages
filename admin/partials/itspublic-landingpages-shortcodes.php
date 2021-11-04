@@ -4,7 +4,7 @@
 function ip_show_docs( $atts ) {
 	ob_start();
     $get_slug = '';
-    if($atts['slug']){
+    if(!empty($atts)){
         $get_slug = $atts['slug'];
         $arg_tax = array(
             array(
