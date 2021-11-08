@@ -36,7 +36,7 @@ function create_gemeente_cpt() {
         'description' => __( 'CPT for Gemeentes', 'itspublic' ),
         'labels' => $labels,
         'menu_icon' => 'dashicons-book',
-        'supports' => array('title'),
+        'supports' => array('title','thumbnail'),
         'taxonomies' => array(),
         'public' => true,
         'show_ui' => true,
@@ -63,7 +63,7 @@ function create_doc_cpt() {
 	$labels = array(
 		'name' => _x( 'Docs', 'Post Type General Name', 'itspublic' ),
 		'singular_name' => _x( 'Doc', 'Post Type Singular Name', 'itspublic' ),
-		'menu_name' => _x( 'Docs', 'Admin Menu text', 'itspublic' ),
+		'menu_name' => _x( 'Batch docs', 'Admin Menu text', 'itspublic' ),
 		'name_admin_bar' => _x( 'Doc', 'Add New on Toolbar', 'itspublic' ),
 		'archives' => __( 'Doc Archives', 'itspublic' ),
 		'attributes' => __( 'Doc Attributes', 'itspublic' ),
@@ -90,7 +90,7 @@ function create_doc_cpt() {
 		'filter_items_list' => __( 'Filter Docs list', 'itspublic' ),
 	);
 	$args = array(
-		'label' => __( 'Doc', 'itspublic' ),
+		'label' => __( 'Batch docs', 'itspublic' ),
 		'description' => __( 'CPT for its public Documents', 'itspublic' ),
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-media-document',
@@ -114,5 +114,3 @@ function create_doc_cpt() {
 
 }
 add_action( 'init', 'create_doc_cpt', 0 );
-
-

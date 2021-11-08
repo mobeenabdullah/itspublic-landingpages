@@ -10,7 +10,7 @@ class UploadDocs {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_docs_upload_page' ) );
-		add_action( 'wp_ajax_cvf_upload_files', array($this, 'cvf_upload_files') );
+		add_action( 'wp_ajax_doc_upload_files', array($this, 'doc_upload_files') );
 	}
 
 	/**
@@ -56,7 +56,7 @@ class UploadDocs {
 		<?php
 	}
 
-	public function cvf_upload_files(){
+	public function doc_upload_files(){
 
 		if (!empty($_FILES)) {
 

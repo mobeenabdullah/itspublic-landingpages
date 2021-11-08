@@ -37,7 +37,6 @@ ul{
 
 /*Main Area Styling*/
 .main-area{
-    background-image: linear-gradient(to right, rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url("https://c.pxhere.com/photos/55/3d/orange_apple_fruit_health_nourishment_diet_greengrocer_market-1216153.jpg!d");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -99,6 +98,9 @@ ul{
     max-width: 0;
     overflow: hidden;
 }
+.image-license-info-list {
+    display: flex;
+}
 .image-license-info svg {
     fill: #ffffff;
     height: 12px;
@@ -122,6 +124,11 @@ ul{
 .lp-section:nth-child(even){
     background: #ffffff;
 }
+.lp-section-slider-wrap-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
 .lp-section-title h2{
     color: #000 !important;
     font-family: 'Hind', sans-serif;
@@ -144,6 +151,7 @@ ul{
 .lp-section-slider-item{
     border-radius: 4px;
     border: 1px solid #E2E2E2;
+    background: #ffffff;
     padding: 8px 6px 17px 8px;
     height: 265px;
     margin: 0px 5px;
@@ -566,7 +574,6 @@ ul{
     align-items: center;
     background-color: #21777b;
     padding: 15px 20px;
-    margin-top: 50px;
 }
 .docs-search #search-text {
     font-size: 14px;
@@ -599,10 +606,9 @@ ul{
     width: 70px;
 }
 .docs-list {
-    max-height: 400px;
+    max-height: 350px;
     height: 100%;
     padding: 10px;
-    margin-bottom: 50px;
     overflow-y: auto;
     border: 1px solid #eee;
 }
@@ -650,4 +656,49 @@ ul{
 .docs-list .doc-item span {
     display: flex;
     align-items: center;
+}
+@media screen and (max-width: 991px) {
+    .docs-list-header {
+        grid-template-columns: 10% 60% 26%;
+    }
+    .doc-id-head {
+        display: none !important;
+    }
+    .doc-size-head {
+        display: none;
+    }
+    .doc-date-head {
+        display: none;
+    }
+    .docs-list .doc-item {
+        grid-template-columns: 10% 60% 25%;
+    }
+    .doc-id {
+        display: none !important;
+    }
+    .doc-size {
+        display: none !important;
+    }
+    .doc-date {
+        display: none !important;
+    }
+    .docs-list .doc-item .doc-actions a {
+        padding: 7px 4px 6px 4px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .docs-results-found h5 {
+        font-size: 0 !important;
+    }
+    .docs-search #search-text {
+        width: 220px;
+    }
+    .docs-list .doc-item .doc-title a {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .docs-list .doc-item {
+        grid-template-columns: 10% 53% 25%;
+    }
 }

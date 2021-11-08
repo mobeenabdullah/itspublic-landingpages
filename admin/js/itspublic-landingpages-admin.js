@@ -41,6 +41,80 @@
 			$('.reset-btn').show();
 		});
 
+		function uploadGemeentePhoto(){
+			// init DropzoneJS
+			var myDropzone = new Dropzone("div#mwp-dropform-uploder-gemeente-photo", {
+
+				url: ip_ajax_obj2.ajaxUrl,
+				paramName: "mwp-dropform-file", // name of file field
+				acceptedFiles: 'application/png, .jpg, .jpeg', // accepted file types
+				maxFilesize: 20, // MB
+				addRemoveLinks: false,
+
+				//success file upload handling
+				success: function (file, response) {
+					// handle your response object
+					console.log(response.status);
+
+					file.previewElement.classList.add("dz-success");
+					file['attachment_id'] = response.attachment_id; // adding uploaded ID to file object
+
+					var post_id = response.post_id;
+
+					file.previewElement.insertAdjacentHTML("beforeend","<div class='form-wraper'>" +
+							"<form method='post' class='photo-update-form'>" +
+								"<div class='photo-maker-info'>" +
+									"<h3>Photographer</h3>" +
+									"<input type='text' class='photo-maker' name='photo-maker'>" +
+								"</div>" +
+								"<div class='licence-select'>" +
+									"<h3>Choose License</h3>" +
+									"<div class='select'>" +
+										"<input type='radio' class='licence' name='licence' value='zero'>" +
+										"<label for='lic1'>Zero</label>" +
+										"<input type='radio' class='licence' name='licence' value='by-attribution'>" +
+										"<label for='lic2'>By attribution</label>" +
+										"<input type='radio'  class='licence' name='licence' value='by-attribution-No-derivative'>" +
+										"<label for='lic3'>By attribution, No derivative</label>" +
+										"<input type='radio' name='licence' class='licence' value='by-attribution-Share-alike'>" +
+										"<label for='lic4'>By attribution, Share alike</label>" +
+										"<input type='radio' name='licence' class='licence' value='by-attribution-nonCommercial-ShareAlike'>" +
+										"<label for='lic5'>By Attribution-NonCommercial, ShareAlike</label>" +
+									"</div>" +
+								"</div>" +
+								"<input type='button' data-post-id='"+ post_id +"' value='submit' class='updatePhoto'>" +
+							"</form>" +
+						"</div>");
+
+				},
+
+				//error while handling file upload
+				error: function (file,response) {
+					file.previewElement.classList.add("dz-error");
+				}
+
+			});
+		}
+		uploadGemeentePhoto();
+
+		$('body').on('click', '.updatePhoto', function(){
+
+			var PhotoData = {
+				PhotoGrapher : $(this).siblings('.photo-maker-info').children('.photo-maker').val(),
+				Licence : $(this).siblings('.licence-select').children('.select').children('.licence:checked').val(),
+				post_id : $(this).attr('data-post-id')
+			}
+			var SelectedButton = $(this);
+			$.ajax({
+				type: "POST",
+				url: ip_ajax_obj3.ajaxUrl,
+				data: PhotoData,
+			}).success(function (data) {
+				console.log(data);
+				console.log($(this));
+				SelectedButton.addClass("updated");
+			});
+		});
 	});
 
 })( jQuery );

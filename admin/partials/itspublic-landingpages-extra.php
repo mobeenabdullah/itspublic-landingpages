@@ -1,4 +1,17 @@
 <?php
+/**
+ * Removes some menus by page.
+ */
+function wpdocs_remove_menus(){
+
+    remove_menu_page( 'edit.php' );                   //Posts
+    remove_menu_page( 'edit-comments.php' );          //Comments
+    remove_menu_page( 'users.php' );                  //Users
+    remove_menu_page( 'tools.php' );                  //Tools
+    remove_menu_page( 'options-general.php' );        //Settings
+
+}
+add_action( 'admin_menu', 'wpdocs_remove_menus' );
 
 // File Size Conversion
 function formatSizeUnits($bytes)

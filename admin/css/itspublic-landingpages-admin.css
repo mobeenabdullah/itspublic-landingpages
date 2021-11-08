@@ -9,3 +9,72 @@
 .reset-cover {
     display: inline-block;
 }
+div#mwp-dropform-uploder-gemeente-photo {
+    display: flex;
+    flex-direction: column;
+}
+.dropzone .dz-preview .dz-details {
+    left: 142px;
+    max-width: 260px;
+    min-width: 120px;
+}
+.dropzone .dz-preview .dz-progress {
+    height: 15px;
+    bottom: 7px;
+    margin-top: -10px;
+    left: 20px;
+    width: 100px;
+    top: 80%;
+}
+.dropzone .dz-preview .dz-image {
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+}
+.dropzone .dz-preview .dz-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {
+    left: 70px;
+    top: 45%;
+}
+.dropzone .dz-preview.dz-image-preview {
+    display: flex;
+    justify-content: space-between;
+}
+.form-wraper form {
+    display: grid;
+    grid-template-columns: 250px 1fr 100px;
+    grid-gap: 15px;
+    padding: 20px 15px;
+}
+.form-wraper form h3 {
+    margin: 0 0 10px;
+}
+.form-wraper .select{
+    display: grid;
+    grid-template-columns: 30px 1fr 30px 1fr;
+    grid-gap: 6px;
+}
+.form-wraper .select input[type="radio"] {
+    transform: translateY(7px);
+}
+.form-wraper input[type="text"] {
+    height: 40px;
+}
+.form-wraper input[type="button"] {
+    height: 40px;
+    margin-top: 30px;
+}
+.form-wraper .select label {
+    text-align: left;
+}
+input.updatePhoto.updated {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+}

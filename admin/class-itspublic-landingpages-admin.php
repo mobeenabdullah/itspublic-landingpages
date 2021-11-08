@@ -57,6 +57,7 @@ class Itspublic_Landingpages_Admin {
         require_once 'partials/itspublic-landingpages-docs-uplaod.php';
         require_once 'partials/itspublic-landingpages-shortcodes.php';
         require_once 'partials/itspublic-landingpages-taxonomy.php';
+        require_once 'partials/itspublic-landingpages-gemeentePhotos-uplaod.php';
 	}
 
 	/**
@@ -104,8 +105,9 @@ class Itspublic_Landingpages_Admin {
 
 		wp_enqueue_script( 'dzone-js', plugin_dir_url( __FILE__ ) . 'js/dropzone-min.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/itspublic-landingpages-admin.js', array( 'jquery' ), $this->version, false );
-		wp_localize_script( $this->plugin_name, 'ip_ajax_obj',  array( 'ajaxUrl' => admin_url( 'admin-ajax.php?action=cvf_upload_files' ) ));
-
+		wp_localize_script( $this->plugin_name, 'ip_ajax_obj',  array( 'ajaxUrl' => admin_url( 'admin-ajax.php?action=doc_upload_files' ) ));
+        wp_localize_script( $this->plugin_name, 'ip_ajax_obj2',  array( 'ajaxUrl' => admin_url( 'admin-ajax.php?action=photo_upload_files' ) ));
+        wp_localize_script( $this->plugin_name, 'ip_ajax_obj3',  array( 'ajaxUrl' => admin_url( 'admin-ajax.php?action=updatePhoto' ) ));
 	}
 
 }

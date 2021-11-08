@@ -29,20 +29,20 @@ function ip_show_docs( $atts ) {
 
         <div class="docs-list-search">
             <div class="docs-search">
-                <input type="text" id="search-text" placeholder="Enter keyword to search...">
+                <input type="text" id="search-text" placeholder="Type hier uw zoekterm...">
             </div>
             <div class="docs-results-found">
-                <h5>Results found: <span class="docs-list-count"></span></h5>
+                <h5>Aantal resultaten: <span class="docs-list-count"></span></h5>
             </div>
         </div>
 
         <div class="docs-list-header">
             <span class="doc-id-head">ID</span>
             <span class="doc-type-head">Type</span>
-            <span class="doc-title-head">Name</span>
-            <span class="doc-size-head">Size</span>
-            <span class="doc-date-head">Uploaded on</span>
-            <span class="doc-actions-head">Actions</span>
+            <span class="doc-title-head">Naam</span>
+            <span class="doc-size-head">Omvang</span>
+            <span class="doc-date-head">Publicatiedatum</span>
+            <span class="doc-actions-head">Actie</span>
         </div>
         <ul class="docs-list">
 
@@ -86,7 +86,7 @@ function ip_show_docs( $atts ) {
                             <?php echo date_format(date_create($get_doc['date']), "m/d/Y"); ?>
                         </span>
                         <div class="doc-actions">
-                            <a href="<?php echo $get_doc['url']; ?>" target="_blank">Download/View</a>
+                            <a href="<?php echo $get_doc['url']; ?>" target="_blank">Download/bekijk</a>
                         </div>
                     </li>
 

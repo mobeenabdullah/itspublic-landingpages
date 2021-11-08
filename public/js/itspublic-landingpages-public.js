@@ -2,7 +2,7 @@
 	$( document ).ready(function() {
 
 		// Implementing Slider on City Landing Page sections
-		$('.lp-section-slider').slick({
+		$('.lp-section-slider-wrap').slick({
 			dots: false,
 			infinite: true,
 			speed: 300,
