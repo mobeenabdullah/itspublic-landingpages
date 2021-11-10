@@ -79,8 +79,9 @@ class UploadGemeentePhoto {
         wp_send_json(array('status' => 'error', 'message' => __('There is nothing to upload!', 'mwp-dropform')));
     }
     public  function  updatePhoto(){
+        $my_data = $_POST['Licence'];
         update_field('maker', $_POST['PhotoGrapher'] , $_POST['post_id']);
-        update_field('rechten', $_POST['Licence'] , $_POST['post_id']);
+        update_field('rechten', $my_data, $_POST['post_id']);
 
         wp_die();
     }

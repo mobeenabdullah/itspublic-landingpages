@@ -63,26 +63,26 @@
 
 					file.previewElement.insertAdjacentHTML("beforeend","<div class='form-wraper'>" +
 							"<form method='post' class='photo-update-form'>" +
-								"<div class='photo-maker-info'>" +
-									"<h3>Photographer</h3>" +
-									"<input type='text' class='photo-maker' name='photo-maker'>" +
-								"</div>" +
 								"<div class='licence-select'>" +
 									"<h3>Choose License</h3>" +
 									"<div class='select'>" +
-										"<input type='radio' class='licence' name='licence' value='zero'>" +
+										"<input type='checkbox' class='licence' name='licence' value='zero'>" +
 										"<label for='lic1'>Zero</label>" +
-										"<input type='radio' class='licence' name='licence' value='by-attribution'>" +
+										"<input type='checkbox' class='licence' name='licence' value='by-attribution'>" +
 										"<label for='lic2'>By attribution</label>" +
-										"<input type='radio'  class='licence' name='licence' value='by-attribution-No-derivative'>" +
+										"<input type='checkbox'  class='licence' name='licence' value='by-attribution-No-derivative'>" +
 										"<label for='lic3'>By attribution, No derivative</label>" +
-										"<input type='radio' name='licence' class='licence' value='by-attribution-Share-alike'>" +
+										"<input type='checkbox' name='licence' class='licence' value='by-attribution-Share-alike'>" +
 										"<label for='lic4'>By attribution, Share alike</label>" +
-										"<input type='radio' name='licence' class='licence' value='by-attribution-nonCommercial-ShareAlike'>" +
+										"<input type='checkbox' name='licence' class='licence' value='by-attribution-nonCommercial-ShareAlike'>" +
 										"<label for='lic5'>By Attribution-NonCommercial, ShareAlike</label>" +
 									"</div>" +
 								"</div>" +
-								"<input type='button' data-post-id='"+ post_id +"' value='submit' class='updatePhoto'>" +
+								"<div class='photo-maker-info'>" +
+									"<h3>Photographer</h3>" +
+									"<input type='text' class='photo-maker' name='photo-maker'>" +
+									"<input type='button' data-post-id='"+ post_id +"' value='submit' class='updatePhoto'>" +
+								"</div>" +
 							"</form>" +
 						"</div>");
 
@@ -99,20 +99,28 @@
 
 		$('body').on('click', '.updatePhoto', function(){
 
-			var PhotoData = {
-				PhotoGrapher : $(this).siblings('.photo-maker-info').children('.photo-maker').val(),
-				Licence : $(this).siblings('.licence-select').children('.select').children('.licence:checked').val(),
+			let SelectedButton = $(this);
+			const getRechten = [];
+			const mainSelector = $(this).closest('.form-wraper');
+			mainSelector.addClass('active-photo');
+			const getMaker = $('.active-photo .photo-maker').val();
+			$(".active-photo .licence:checked").each(function(){
+				getRechten.push($(this).val());
+			});
+
+			let PhotoData = {
+				PhotoGrapher : getMaker,
+				Licence : getRechten,
 				post_id : $(this).attr('data-post-id')
 			}
-			var SelectedButton = $(this);
+
 			$.ajax({
 				type: "POST",
 				url: ip_ajax_obj3.ajaxUrl,
 				data: PhotoData,
 			}).success(function (data) {
-				console.log(data);
-				console.log($(this));
-				SelectedButton.addClass("updated");
+				mainSelector.removeClass('active-photo');
+				SelectedButton.attr('value', 'Updated');
 			});
 		});
 	});

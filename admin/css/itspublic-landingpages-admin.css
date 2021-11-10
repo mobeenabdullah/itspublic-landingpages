@@ -15,8 +15,10 @@ div#mwp-dropform-uploder-gemeente-photo {
 }
 .dropzone .dz-preview .dz-details {
     left: 142px;
-    max-width: 260px;
+    max-width: 190px;
+    padding-left: 0;
     min-width: 120px;
+    padding-right: 0;
 }
 .dropzone .dz-preview .dz-progress {
     height: 15px;
@@ -47,7 +49,7 @@ div#mwp-dropform-uploder-gemeente-photo {
 }
 .form-wraper form {
     display: grid;
-    grid-template-columns: 250px 1fr 100px;
+    grid-template-columns: 1fr 190px;
     grid-gap: 15px;
     padding: 20px 15px;
 }
@@ -59,22 +61,22 @@ div#mwp-dropform-uploder-gemeente-photo {
     grid-template-columns: 30px 1fr 30px 1fr;
     grid-gap: 6px;
 }
-.form-wraper .select input[type="radio"] {
+.form-wraper .select input[type="checkbox"] {
     transform: translateY(7px);
 }
 .form-wraper input[type="text"] {
-    height: 40px;
+    height: 30px;
 }
 .form-wraper input[type="button"] {
-    height: 40px;
-    margin-top: 30px;
+    height: 30px;
+    margin-top: 10px;
+    background: #000;
+    color: #fff;
+    width: 172px;
+    border: 1px solid #000;
+    border-radius: 3px;
+
 }
 .form-wraper .select label {
     text-align: left;
-}
-input.updatePhoto.updated {
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
-    border-radius: 3px;
 }
