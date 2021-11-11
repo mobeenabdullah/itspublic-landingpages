@@ -64,6 +64,7 @@ ul{
     color: #ffffff !important;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     margin: 0 !important;
+    padding: 0 20px;
 }
 .image-information {
     display: flex;
@@ -695,10 +696,19 @@ ul{
     }
     .docs-list .doc-item .doc-title a {
         font-size: 12px;
+        line-height: 18px;
     }
 }
 @media screen and (max-width: 480px) {
     .docs-list .doc-item {
-        grid-template-columns: 10% 53% 25%;
+        grid-template-columns: 9% 50% 33%;
+    }
+    .docs-results-found h5 .docs-list-count {
+        padding: 7px 5px;
+        display: inline-block;
+        font-size: 10px;
+        line-height: 1;
+        background: #333;
+        border-radius: 3px;
     }
 }

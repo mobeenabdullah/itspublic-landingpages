@@ -250,7 +250,7 @@ function show_gemeente_lp_cb(){
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
-                        <h2>On Amsterdam</h2>
+                        <h2>On <?php echo $gemeentes_title; ?></h2>
                     </div>
                         <?php
                               $args = array(
@@ -304,7 +304,7 @@ function show_gemeente_lp_cb(){
                 <div class="container">
                     <div class="lp-section-content">
                         <div class="lp-section-title">
-                            <h2>Comparing Amsterdam</h2>
+                            <h2>Comparing <?php echo $gemeentes_title; ?></h2>
                         </div>
                             <?php
                             $args = array(
@@ -474,10 +474,10 @@ function show_gemeente_lp_cb(){
                         ?>
                         <div class="lp-contact-person-box">
                             <div class="lp-contact-person-box-img">
-                                <a href="<?php the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" class="img-fluid" alt="person" loading="lazy"></a>
+                                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'); ?>" class="img-fluid" alt="person" loading="lazy">
                             </div>
                             <div class="lp-contact-person-box-detail">
-                                <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                                <h4><?php the_title(); ?></h4>
                                 <p><?php echo $get_member_email; ?></p>
                                 <div class="triangle-cover">
                                     <div class='triangle'></div>

@@ -47,7 +47,7 @@
 
 				url: ip_ajax_obj2.ajaxUrl,
 				paramName: "mwp-dropform-file", // name of file field
-				acceptedFiles: 'application/png, .jpg, .jpeg', // accepted file types
+				acceptedFiles: 'application/png, .jpg,.png, .jpeg', // accepted file types
 				maxFilesize: 20, // MB
 				addRemoveLinks: false,
 
@@ -81,7 +81,7 @@
 								"<div class='photo-maker-info'>" +
 									"<h3>Photographer</h3>" +
 									"<input type='text' class='photo-maker' name='photo-maker'>" +
-									"<input type='button' data-post-id='"+ post_id +"' value='submit' class='updatePhoto'>" +
+									"<input type='button' data-post-id='"+ post_id +"' value='Save' class='updatePhoto'>" +
 								"</div>" +
 							"</form>" +
 						"</div>");
