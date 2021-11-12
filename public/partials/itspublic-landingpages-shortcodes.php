@@ -257,8 +257,7 @@ function show_gemeente_lp_cb(){
                                     'post_type' => 'materiaal',
                                     'post_status' => 'publish',
                                     'posts_per_page' => -1,
-                                    'meta_key'       => 'select_gemeentes',
-                                    'meta_value'     => $gemeentes_id,
+
                                     'tax_query' => array(
                                       array(
                                           'taxonomy' => 'categorie',
@@ -272,6 +271,19 @@ function show_gemeente_lp_cb(){
                                         'terms' => array('overig', 'algemeen'),
                                         'operator' => 'NOT IN'
                                     )
+                                  ),
+                                  'meta_query' => array(
+                                      'relation' => 'OR',
+                                      array(
+                                          'key' => 'non_visible_search_terms',
+                                          'value' => $gemeentes_title,
+                                          'compare' => 'LIKE'
+                                      ),
+                                      array(
+                                          'key' => 'make_it_visible_in_gemeente_first_row',
+                                          'value' => 1,
+                                          'compare' => '='
+                                      )
                                   )
                                 );
                                 $loop = new WP_Query( $args ); ?>
@@ -295,64 +307,10 @@ function show_gemeente_lp_cb(){
                         <?php
                             endwhile;
                         wp_reset_postdata();
-
                         ?>
                     </div>
             </div>
         </section>
-        <section class="lp-section lp-comparision-materialen lp-partial-white">
-                <div class="container">
-                    <div class="lp-section-content">
-                        <div class="lp-section-title">
-                            <h2>Comparing <?php echo $gemeentes_title; ?></h2>
-                        </div>
-                            <?php
-                            $args = array(
-                                'post_type' => 'materiaal',
-                                'post_status' => 'publish',
-                                'posts_per_page' => -1,
-                                's' => $gemeentes_title,
-                                'tax_query' => array(
-                                    array(
-                                        'taxonomy' => 'categorie',
-                                        'field' => 'slug',
-                                        'terms' => array('templates', 'training'),
-                                        'operator' => 'NOT IN'
-                                    ),
-                                    array(
-                                        'taxonomy' => 'onderwerp',
-                                        'field' => 'slug',
-                                        'terms' => array('overig', 'algemeen'),
-                                        'operator' => 'NOT IN'
-                                    )
-                                )
-                            );
-                            $loop = new WP_Query( $args ); ?>
-                        <div class=" <?php if($loop->post_count > 5){ echo 'lp-section-slider-wrap'; }else { echo 'lp-section-slider-wrap-grid'; } ?> lp-section-slider">
-                            <?php while ( $loop->have_posts() ) : $loop->the_post();
-                                $photo = get_field('photo');
-                                ?>
-                                <div>
-                                    <div class="lp-section-slider-item">
-                                        <div class="lp-section-slider-item-row">
-                                            <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
-                                                <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID); ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
-                                                <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
-                                            </a>
-                                        </div>
-                                        <div class="lp-section-slider-item-detail lp-section-slider-item-row">
-                                            <?php the_excerpt(); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php
-                            endwhile;
-                            wp_reset_postdata();
-
-                            ?>
-                        </div>
-                    </div>
-            </section>
         <section class="lp-section lp-general-materialen lp-partial-white">
             <div class="container">
                 <div class="lp-section-content">
