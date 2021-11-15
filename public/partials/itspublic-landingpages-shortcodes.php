@@ -5,6 +5,7 @@ function show_gemeente_lp_cb(){
         <?php $gemeentes_id = get_the_ID(); ?>
         <?php $gemeentes_title = get_the_title(); ?>
         <?php $getAllRechten = get_field('rechten'); ?>
+        <?php $row_1_posts = array(); ?>
         <section class="main-area" style="background-image: linear-gradient(to right, rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('<?php echo get_the_post_thumbnail_url(); ?>')">
             <div class="container">
                 <div class="main-area-content">
@@ -246,7 +247,7 @@ function show_gemeente_lp_cb(){
                 </div>
             </div>
         </section>
-        <section class="lp-section lp-main-materialen lp-partial-white">
+        <section class="lp-section lp-main-materialen">
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
@@ -254,24 +255,9 @@ function show_gemeente_lp_cb(){
                     </div>
                         <?php
                               $args = array(
-                                    'post_type' => 'materiaal',
-                                    'post_status' => 'publish',
-                                    'posts_per_page' => -1,
-
-                                    'tax_query' => array(
-                                      array(
-                                          'taxonomy' => 'categorie',
-                                          'field' => 'slug',
-                                          'terms' => array('templates', 'training'),
-                                          'operator' => 'NOT IN'
-                                      ),
-                                      array(
-                                        'taxonomy' => 'onderwerp',
-                                        'field' => 'slug',
-                                        'terms' => array('overig', 'algemeen'),
-                                        'operator' => 'NOT IN'
-                                    )
-                                  ),
+                                  'post_type' => 'materiaal',
+                                  'post_status' => 'publish',
+                                  'posts_per_page' => -1,
                                   'meta_query' => array(
                                       'relation' => 'OR',
                                       array(
@@ -289,6 +275,7 @@ function show_gemeente_lp_cb(){
                                 $loop = new WP_Query( $args ); ?>
                     <div class=" <?php if($loop->post_count > 5){ echo 'lp-section-slider-wrap'; }else { echo 'lp-section-slider-wrap-grid'; } ?> lp-section-slider">
                                 <?php while ( $loop->have_posts() ) : $loop->the_post();
+                                array_push($row_1_posts , get_the_ID());
                                 $photo = get_field('photo');
                                 ?>
                                     <div>
@@ -311,7 +298,7 @@ function show_gemeente_lp_cb(){
                     </div>
             </div>
         </section>
-        <section class="lp-section lp-general-materialen lp-partial-white">
+        <section class="lp-section lp-general-materialen">
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
@@ -322,6 +309,7 @@ function show_gemeente_lp_cb(){
                             'post_type' => 'materiaal',
                             'post_status' => 'publish',
                             'posts_per_page' => -1,
+                            'post__not_in' => $row_1_posts,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'categorie',
@@ -362,7 +350,7 @@ function show_gemeente_lp_cb(){
                     </div>
                 </div>
         </section>
-        <section class="lp-section lp-training-materialen lp-partial-white">
+        <section class="lp-section lp-training-materialen">
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
@@ -373,6 +361,7 @@ function show_gemeente_lp_cb(){
                             'post_type' => 'materiaal',
                             'post_status' => 'publish',
                             'posts_per_page' => -1,
+                            'post__not_in' => $row_1_posts,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'categorie',

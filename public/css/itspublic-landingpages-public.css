@@ -21,10 +21,7 @@ ul{
     margin: 0 auto;
     width: 100%;
 }
-.lp-section{
-    padding: 50px 0px 50px 0px;
-    background-color: #FCFCFC;
-}
+
 .type-gemeente .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated{
     padding: 0 !important;
 }
@@ -45,21 +42,21 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 636px;
+    height: 400px;
     position: relative;
 }
 .main-area-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 175px;
+    height: 150px;
     width: 790px;
     background: rgba(0, 0, 0, 0.3);
 }
 .main-area-title h1{
     font-family: 'Hind', sans-serif;
-    font-size: 72px !important;
-    line-height: 72px !important;
+    font-size: 52px !important;
+    line-height: 52px !important;
     font-weight: 600 !important;
     color: #ffffff !important;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -121,9 +118,19 @@ ul{
     overflow: visible;
     margin-right: 10px;
 }
+.elementor-lightbox-item .swiper-zoom-container img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}
 /*lp section*/
-.lp-section:nth-child(even){
-    background: #ffffff;
+.lp-section{
+    padding: 25px 0px 25px 0px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #F9F9F9;
+}
+.lp-section:last-child   {
+    border-bottom: 0;
 }
 .lp-section-slider-wrap-grid {
     display: grid;
@@ -134,15 +141,16 @@ ul{
     color: #000 !important;
     font-family: 'Hind', sans-serif;
     font-size: 36px !important;
-    line-height: 43px !important;
+    line-height: 36px !important;
     font-weight: 700 !important;
     position: relative;
-    margin-bottom: 53px !important;
+    margin-bottom: 36px !important;
+    margin-top: 0;
 }
 .lp-section-title h2::after{
     content: '';
     position: absolute;
-    left: 0;
+    left: 2px;
     bottom: -10px;
     background: #22777B;
     height: 3px;
@@ -161,7 +169,7 @@ ul{
     justify-content: space-between;
 }
 .lp-section-slider-item:hover {
-    box-shadow: 0 0 5px 0px rgba(0,0,0,0.1);
+    border: 1px solid orange;
 }
 .lp-section-item-image{
     height: 137px;
@@ -207,7 +215,7 @@ ul{
     border: none !important;
     outline: none !important;
     background: #F5F5F5 !important;
-    color: #c8c8c8 !important;
+    color: #999 !important;
     transition: all 0.2s ease-in-out;
     border-radius: 3px !important;
     display: flex;
