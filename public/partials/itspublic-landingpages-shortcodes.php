@@ -251,7 +251,7 @@ function show_gemeente_lp_cb(){
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
-                        <h2>On <?php echo $gemeentes_title; ?></h2>
+                        <h2>Publicaties waarin <?php echo $gemeentes_title; ?> voorkomt</h2>
                     </div>
                         <?php
                               $args = array(
@@ -302,7 +302,7 @@ function show_gemeente_lp_cb(){
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
-                        <h2>Other general publications</h2>
+                        <h2>Overige publicaties</h2>
                     </div>
                         <?php
                         $args = array(
@@ -354,7 +354,7 @@ function show_gemeente_lp_cb(){
             <div class="container">
                 <div class="lp-section-content">
                     <div class="lp-section-title">
-                        <h2>Training and template materials</h2>
+                        <h2>Beschikbare templates en trainingen</h2>
                     </div>
                         <?php
                         $args = array(
@@ -404,7 +404,7 @@ function show_gemeente_lp_cb(){
                             <h2>Contact</h2>
                         </div>
                         <div class="lp-contact-info-tagline">
-                            <p>Question on the publications contact one of our team members</p>
+                            <p>Neem contact met ons op voor meer informatie of vragen.</p>
                         </div>
                     </div>
                     <div class="lp-contact-person">

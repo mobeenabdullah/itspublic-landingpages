@@ -21,7 +21,9 @@ function ip_show_docs( $atts ) {
 		'posts_per_page' => -1,
 		'post_type' => 'doc',
 		'post_status' => 'publish',
-        'tax_query' => $arg_tax
+        'tax_query' => $arg_tax,
+        'orderby'=> 'title',
+        'order' => 'ASC'
 	);
 	$my_query = new WP_Query($args);
 

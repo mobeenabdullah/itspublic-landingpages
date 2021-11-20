@@ -42,21 +42,22 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 300px;
     position: relative;
+    margin-bottom: 10px;
 }
 .main-area-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 790px;
+    height: 80px;
+    width: 600px;
     background: rgba(0, 0, 0, 0.3);
 }
 .main-area-title h1{
     font-family: 'Hind', sans-serif;
-    font-size: 52px !important;
-    line-height: 52px !important;
+    font-size: 36px !important;
+    line-height: 44px !important;
     font-weight: 600 !important;
     color: #ffffff !important;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -140,20 +141,20 @@ ul{
 .lp-section-title h2{
     color: #000 !important;
     font-family: 'Hind', sans-serif;
-    font-size: 36px !important;
-    line-height: 36px !important;
+    font-size: 24px !important;
+    line-height: 30px !important;
     font-weight: 700 !important;
     position: relative;
-    margin-bottom: 36px !important;
+    margin-bottom: 25px !important;
     margin-top: 0;
 }
 .lp-section-title h2::after{
     content: '';
     position: absolute;
     left: 2px;
-    bottom: -10px;
+    bottom: -5px;
     background: #22777B;
-    height: 3px;
+    height: 2px;
     width: 80px;
     border-radius: 50px;
 }
@@ -304,7 +305,7 @@ ul{
     font-weight: 300 !important;
 }
 .lp-contact-info{
-    max-width: 409px;
+    max-width: 370px;
 }
 .lp-contact-info-title h2{
     color: #000 !important;
@@ -467,10 +468,6 @@ ul{
     .main-area-title {
         height: 120px;
         width: 350px;
-    }
-    .main-area-title h1{
-        font-size: 50px !important;
-        line-height: 50px !important;
     }
     .lp-section-slider {
         width: 80% !important;
