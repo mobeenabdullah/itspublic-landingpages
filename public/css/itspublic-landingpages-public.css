@@ -135,8 +135,8 @@ ul{
 }
 .lp-section-slider-wrap-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
+    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+    grid-gap: 10px;
 }
 .lp-section-title h2{
     color: #000 !important;
@@ -399,6 +399,9 @@ ul{
         transform: translateX(0);
         background: transparent !important;
         text-align: center;
+        height: unset;
+        min-width: unset;
+        width: unset;
     }
     .lp-contact-person-box{
         margin: 0;
@@ -457,13 +460,31 @@ ul{
     .container{
         max-width: 540px;
     }
+    .lp-section-title h2 {
+        text-align: center;
+        word-break: break-word;
+    }
+    .lp-section-title h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .lp-contact-person {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        grid-gap: 15px;
+        grid-row-gap: 0;
+        grid-column-gap: 15px;
+    }
 }
 @media screen and (max-width: 480px) {
     .lp-section {
         padding: 30px 0px 30px 0px;
     }
     .main-area-content{
-        height: 375px;
+        height: 305px;
+    }
+    .main-area-title h1 {
+        font-size: 30px !important;
+        line-height: 36px !important;
     }
     .main-area-title {
         height: 120px;
