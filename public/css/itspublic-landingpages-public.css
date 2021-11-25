@@ -135,7 +135,7 @@ ul{
 }
 .lp-section-slider-wrap-grid {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(220px, 265px) );
     grid-gap: 10px;
 }
 .lp-section-title h2{
@@ -684,6 +684,46 @@ ul{
     display: flex;
     align-items: center;
 }
+/*
+* Archive Gemeente Page Styling
+*/
+
+.post-type-archive-gemeente .elementor-grid-item.gemeente.type-gemeente {
+    filter: grayscale(1);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    position: relative;
+}
+.post-type-archive-gemeente .elementor-grid-item.gemeente.type-gemeente:hover {
+    border: 1px solid orange;
+    filter: grayscale(0);
+}
+.post-type-archive-gemeente .elementor-post__thumbnail__link {
+    margin-bottom: 0 !important;
+}
+.post-type-archive-gemeente .elementor-post__text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    background: rgba(0,0,0,0.6);
+    max-width: 90%;
+    width: auto !important;
+    padding: 10px;
+    border-radius: 3px;
+}
+.post-type-archive-gemeente .elementor-post__title {
+    display: inline-block;
+    line-height: 1 !important;
+}
+.post-type-archive-gemeente .elementor-post__title a {
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+}
+.post-type-archive-gemeente .elementor-pagination {
+    margin-top: 40px !important;
+}
+
 @media screen and (max-width: 991px) {
     .docs-list-header {
         grid-template-columns: 10% 60% 26%;

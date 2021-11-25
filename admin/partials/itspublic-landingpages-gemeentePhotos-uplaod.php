@@ -49,6 +49,7 @@ class UploadGemeentePhoto {
                 $file_name = explode(".", $array['name']);
                 $post_name = ucfirst($file_name[0]);
                 $post_name = str_replace('_', ' ', $post_name);
+                $description = 'Alle publicaties voor '. $post_name .' staan hier op een rijtje, direct te downloaden.';
                 // HANDLE RECEIVED FILE
                 $create_doc = wp_insert_post(array(
                     'post_title' => $post_name,
@@ -58,6 +59,7 @@ class UploadGemeentePhoto {
 
                 $post_id = $create_doc; // Set post ID to attach uploaded image to specific post
 
+                update_post_meta($post_id, '_yoast_wpseo_metadesc', $description );
                 $attachment_id = media_handle_upload($file, $post_id);
                 set_post_thumbnail($post_id, $attachment_id);
 

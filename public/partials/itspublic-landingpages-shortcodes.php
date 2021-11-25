@@ -6,7 +6,7 @@ function show_gemeente_lp_cb(){
         <?php $gemeentes_title = get_the_title(); ?>
         <?php $getAllRechten = get_field('rechten'); ?>
         <?php $row_1_posts = array(); ?>
-        <section class="main-area" style="background-image: linear-gradient(to right, rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('<?php echo get_the_post_thumbnail_url(); ?>')">
+        <section class="main-area" style="background-image: linear-gradient(to right, rgba(0,0,0,0.15),rgba(0,0,0,0.15)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'home-hero-slider'); ?>')">
             <div class="container">
                 <div class="main-area-content">
                     <div class="main-area-title">
@@ -318,9 +318,9 @@ function show_gemeente_lp_cb(){
                                     'operator' => 'NOT IN'
                                 ),
                                 array(
-                                    'taxonomy' => 'onderwerp',
+                                    'taxonomy' => 'categorie',
                                     'field' => 'slug',
-                                    'terms' => array('overig', 'algemeen'),
+                                    'terms' => array('projectinzichten', 'open-decks'),
                                 )
                             )
                         );
