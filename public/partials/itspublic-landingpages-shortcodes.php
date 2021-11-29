@@ -275,13 +275,15 @@ function show_gemeente_lp_cb(){
                                 $loop = new WP_Query( $args ); ?>
                     <div class=" <?php if($loop->post_count > 5){ echo 'lp-section-slider-wrap'; }else { echo 'lp-section-slider-wrap-grid'; } ?> lp-section-slider">
                                 <?php while ( $loop->have_posts() ) : $loop->the_post();
-                                array_push($row_1_posts , get_the_ID());
-                                $photo = get_field('photo');
+                                    $get_container_landing_page_status = get_field('open_container_landing_page');
+                                    $get_container_landing_page_id = get_field('select_container_landing_page');
+                                    array_push($row_1_posts , get_the_ID());
+                                    $photo = get_field('photo');
                                 ?>
                                     <div>
                                         <div class="lp-section-slider-item">
                                             <div class="lp-section-slider-item-row">
-                                                <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                                <a href="<?php  ($get_container_landing_page_status) ? the_permalink($get_container_landing_page_id) : the_permalink(); ?>" class="lp-section-item-link">
                                                     <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
                                                     <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
                                                 </a>
@@ -327,12 +329,14 @@ function show_gemeente_lp_cb(){
                         $loop = new WP_Query( $args ); ?>
                     <div class=" <?php if($loop->post_count > 5){ echo 'lp-section-slider-wrap'; }else { echo 'lp-section-slider-wrap-grid'; } ?> lp-section-slider">
                         <?php while ( $loop->have_posts() ) : $loop->the_post();
+                            $get_container_landing_page_status = get_field('open_container_landing_page');
+                            $get_container_landing_page_id = get_field('select_container_landing_page');
                             $photo = get_field('photo');
                             ?>
                             <div>
                                 <div class="lp-section-slider-item">
                                     <div class="lp-section-slider-item-row">
-                                        <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                        <a href="<?php  ($get_container_landing_page_status) ? the_permalink($get_container_landing_page_id) : the_permalink(); ?>" class="lp-section-item-link">
                                             <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
                                             <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
                                         </a>
@@ -373,12 +377,14 @@ function show_gemeente_lp_cb(){
                         $loop = new WP_Query( $args ); ?>
                     <div class=" <?php if($loop->post_count > 5){ echo 'lp-section-slider-wrap'; }else { echo 'lp-section-slider-wrap-grid'; } ?> lp-section-slider">
                         <?php while ( $loop->have_posts() ) : $loop->the_post();
+                            $get_container_landing_page_status = get_field('open_container_landing_page');
+                            $get_container_landing_page_id = get_field('select_container_landing_page');
                             $photo = get_field('photo');
                             ?>
                             <div>
                                 <div class="lp-section-slider-item">
                                     <div class="lp-section-slider-item-row">
-                                        <a href="<?php the_permalink(); ?>" class="lp-section-item-link">
+                                        <a href="<?php  ($get_container_landing_page_status) ? the_permalink($get_container_landing_page_id) : the_permalink(); ?>" class="lp-section-item-link">
                                             <span class="lp-section-item-image"><img src="<?php echo get_the_post_thumbnail_url($photo->ID);; ?>" alt="Slider-item-banner" class="img-fluid" loading="lazy"></span>
                                             <span class="lp-section-item-link-text"><h3><?php the_title(); ?></h3></span>
                                         </a>
@@ -499,3 +505,44 @@ function show_thematic_cards_cb( $atts ){
 }
 add_shortcode('show_thematic_cards', 'show_thematic_cards_cb');
 
+// Create Shortcode show-gemeentes
+
+add_shortcode( 'show-gemeentes', 'show__archive_gemeentes_cb' );
+function show__archive_gemeentes_cb() {
+    ob_start();
+
+    $gemeente_args = array(
+        'numberposts'      => -1,
+        'orderby'          => 'title',
+        'order'            => 'ASC',
+        'post_type'        => 'gemeente',
+        'post_status'    => 'publish',
+    );
+    $gemeentes = get_posts($gemeente_args);
+    echo "<ul class='gemeente-lists'>";
+    foreach ($gemeentes as $gemeente){
+        echo '<li>';
+        echo "<a href='". get_the_permalink($gemeente->ID) ."'>". get_the_title($gemeente->ID) ."</a>";
+        echo '</li>';
+    }
+    echo "</ul>";
+
+
+
+     $content = ob_get_clean();
+    return $content;
+}
+// Create Shortcode show-documents
+
+add_shortcode( 'show_doc_path', 'show_doc_path_cb' );
+function show_doc_path_cb() {
+    ob_start();
+        $doc_meta = get_field('ip_doc', get_the_ID());
+        if($doc_meta['url']) {
+            echo "<a class='doc-link' href='{$doc_meta['url']}' target='_blank'>Download/view</a>";
+        } else {
+            echo "File not available";
+        }
+    $content = ob_get_clean();
+    return $content;
+}

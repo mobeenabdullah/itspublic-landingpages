@@ -53,7 +53,6 @@ class Itspublic_Landingpages_Public {
 		$this->version = $version;
 
         require_once 'partials/itspublic-landingpages-shortcodes.php';
-        require_once 'partials/itspublic-landingpages-public-extra.php';
 
 	}
 

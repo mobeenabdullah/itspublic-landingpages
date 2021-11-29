@@ -135,7 +135,7 @@ ul{
 }
 .lp-section-slider-wrap-grid {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(220px, 265px) );
+    grid-template-columns: repeat( auto-fit, minmax(220px, 234px) );
     grid-gap: 10px;
 }
 .lp-section-title h2{
@@ -687,41 +687,38 @@ ul{
 /*
 * Archive Gemeente Page Styling
 */
-
-.post-type-archive-gemeente .elementor-grid-item.gemeente.type-gemeente {
-    filter: grayscale(1);
-    border-radius: 5px;
-    border: 1px solid transparent;
-    position: relative;
+.gemeente-lists {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
 }
-.post-type-archive-gemeente .elementor-grid-item.gemeente.type-gemeente:hover {
-    border: 1px solid orange;
-    filter: grayscale(0);
+.gemeente-lists a {
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 28px;
+    font-family: var( --e-global-typography-primary-font-family ), Sans-serif;
+    transition: all 0.3s ease-in;
+    color: #000000 !important;
 }
-.post-type-archive-gemeente .elementor-post__thumbnail__link {
-    margin-bottom: 0 !important;
+.gemeente-lists a:hover {
+    text-decoration: underline;
 }
-.post-type-archive-gemeente .elementor-post__text {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    display: flex;
-    background: rgba(0,0,0,0.6);
-    max-width: 90%;
-    width: auto !important;
-    padding: 10px;
+.single-doc h1 {
+    font-size: 48px !important;
+    color: #000000 !important;
+    margin-bottom: 25px;
+}
+.single-doc .doc-link {
+    border: 1px solid;
     border-radius: 3px;
+    padding: 8px 20px;
+    background: transparent;
+    transition: all 0.3s ease-in;
 }
-.post-type-archive-gemeente .elementor-post__title {
-    display: inline-block;
-    line-height: 1 !important;
-}
-.post-type-archive-gemeente .elementor-post__title a {
+.single-doc .doc-link:hover {
     color: #ffffff !important;
-    line-height: 1.2 !important;
-}
-.post-type-archive-gemeente .elementor-pagination {
-    margin-top: 40px !important;
+    background: rgb(34, 119, 123);
 }
 
 @media screen and (max-width: 991px) {
