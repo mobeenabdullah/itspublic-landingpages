@@ -3,9 +3,9 @@
 // IP Docs Shortcode
 function ip_show_docs( $atts ) {
 	ob_start();
-    $get_slug = '';
+    $get_slug = [];
     if(!empty($atts)){
-        $get_slug = $atts['slug'];
+        $get_slug = explode(',', str_replace(' ', '', $atts['slug']));
         $arg_tax = array(
             array(
                 'taxonomy' => 'doccategory',

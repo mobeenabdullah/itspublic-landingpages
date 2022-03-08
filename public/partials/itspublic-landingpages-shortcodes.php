@@ -16,7 +16,7 @@ function show_gemeente_lp_cb(){
                     <div class="image-information">
                         <?php if(get_field('maker')): ?>
                         <div class="image-photographer-info">
-                            <p>Fotograaf: <?php echo get_field('maker'); ?></p>
+                            <p>Bron: <?php echo get_field('maker'); ?></p>
                         </div>
                         <?php endif; ?>
                         <?php if(!empty($getAllRechten)): ?>
@@ -539,7 +539,7 @@ function show_doc_path_cb() {
     ob_start();
         $doc_meta = get_field('ip_doc', get_the_ID());
         if($doc_meta['url']) {
-            echo "<a class='doc-link' href='{$doc_meta['url']}' target='_blank'>Download/view</a>";
+            echo "<a class='doc-link' href='{$doc_meta['url']}' target='_blank'>Download/bekijk</a>";
         } else {
             echo "File not available";
         }

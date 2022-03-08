@@ -50,7 +50,6 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
     width: 600px;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -62,7 +61,7 @@ ul{
     color: #ffffff !important;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     margin: 0 !important;
-    padding: 0 20px;
+    padding: 15px 20px;
 }
 .image-information {
     display: flex;
